@@ -1,0 +1,29 @@
+{
+  "name": "helpcrunch/api-client-php",
+  "version": "0.1",
+  "description": "PHP Client for HelpCrunch public API",
+  "keywords": ["api", "helpcrunch"],
+  "type": "library",
+  "homepage": "https://github.com/helpcrunch/api-client-php",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "HelpCrunch",
+      "homepage": "https://helpcrunch.com"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "~6.0",
+    "ext-json": "*",
+    "php": ">=7.0"
+  },
+  "support": {
+    "email": "info@helpcrunch.com",
+    "issues": "https://github.com/helpcrunch/api-client-php/issues"
+  },
+  "autoload": {
+    "psr-4": {
+      "Helpcrunch\\PublicApi\\": "src/"
+    }
+  }
+}
