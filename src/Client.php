@@ -25,12 +25,10 @@ class Client extends GuzzleClient {
     /**
      * @param string $organizationDomain
      * @param string $privateKey
-     * @param null|string $domain
      */
     public function __construct(
         string $organizationDomain = null,
-        string $privateKey = null,
-        string $domain = null
+        string $privateKey = null
     ) {
         if (empty($organizationDomain)) {
             throw new \InvalidArgumentException('You need to specify your organization\'s domain');
