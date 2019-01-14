@@ -9,12 +9,8 @@ class Client extends GuzzleClient {
     const INVALID_KEY_CODE = 401;
     const NOT_FOUND_CODE = 404;
     const TOO_MANY_REQUESTS = 429;
-    const DOMAIN = 'helpcrunch.com';
-
-    /**
-     * @var string
-     */
-    protected $organizationDomain;
+    const DEFAULT_DOMAIN = 'com';
+    const DEFAULT_SCHEMA = 'https://';
 
     /**
      * @var string
@@ -42,9 +38,18 @@ class Client extends GuzzleClient {
         if (empty($privateKey)) {
             throw new \InvalidArgumentException('You need to specify your organization\'s private API key');
         }
+        if (!defined('HELPCRUNCH_PUBLIC_API_SCHEMA')) {
+            define('HELPCRUNCH_PUBLIC_API_SCHEMA', static::DEFAULT_SCHEMA);
+        }
+        if (!defined('HELPCRUNCH_PUBLIC_API_DOMAIN')) {
+            define('HELPCRUNCH_PUBLIC_API_DOMAIN', static::DEFAULT_DOMAIN);
+        }
 
         parent::__construct([
-            'base_uri' => 'http://' . $organizationDomain . '.' . ($domain ?: static::DOMAIN) . '/api/public/',
+            'base_uri' => HELPCRUNCH_PUBLIC_API_SCHEMA .
+                $organizationDomain . '.helpcrunch.' .
+                HELPCRUNCH_PUBLIC_API_DOMAIN .
+                '/api/public/',
         ]);
         $this->headers = [
             'Authorization' => 'Bearer api-key="' . $privateKey . '"',
