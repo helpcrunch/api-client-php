@@ -27,7 +27,7 @@ class Entity {
     public function save()
     {
         $this->apiClient->request('PATCH', static::$endpoint, [
-            'body' => json_encode([$this->fields]),
+            'body' => json_encode([$this->fields], JSON_UNESCAPED_UNICODE),
         ]);
     }
 
