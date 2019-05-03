@@ -2,7 +2,10 @@
 
 namespace Helpcrunch\PublicApi;
 
-class Entity {
+use GuzzleHttp\RequestOptions;
+
+class Entity
+{
     /**
      * @var string
      */
@@ -27,7 +30,7 @@ class Entity {
     public function save()
     {
         $this->apiClient->request('PATCH', static::$endpoint, [
-            'body' => json_encode([$this->fields], JSON_UNESCAPED_UNICODE),
+            RequestOptions::JSON => json_encode([$this->fields], JSON_UNESCAPED_UNICODE),
         ]);
     }
 

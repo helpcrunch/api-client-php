@@ -5,7 +5,8 @@ namespace Helpcrunch\PublicApi;
 use \GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\ClientException;
 
-class Client extends GuzzleClient {
+class Client extends GuzzleClient
+{
     const INVALID_KEY_CODE = 401;
     const NOT_FOUND_CODE = 404;
     const TOO_MANY_REQUESTS = 429;

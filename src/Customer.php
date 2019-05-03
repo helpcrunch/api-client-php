@@ -11,7 +11,8 @@ namespace Helpcrunch\PublicApi;
  * @property bool unsubscribed
  * @property array custom_data
  */
-class Customer extends Entity {
+class Customer extends Entity
+{
     /**
      * @var string
      */
