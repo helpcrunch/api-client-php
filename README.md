@@ -1,6 +1,12 @@
 ## HelpCrunch Public API Client for PHP
 
 PHP Client for HelpCrunch public API.   
-You can retrieve, update, add and delete your organization customers with HelpCrunch Public API.  
-You will need your Public API Key from you HelpCrunch account -> Settings -> Developers -> Public API.  
-This client library will automatically cover most requests descript here: https://docs.helpcrunch.com/backend-api-reference.html 
+You can retrieve, update, add and delete your organization's customers.  
+You will need your Public API Key from you HelpCrunch Account -> Settings -> Developers -> Public API.  
+This client library will cover most of requests descript here: https://docs.helpcrunch.com/backend-api-reference.html 
+
+### Prerequisites
+PHP 7, php-json
+
+### Installation
+Run `composer require helpcrunch/api-client-php`
