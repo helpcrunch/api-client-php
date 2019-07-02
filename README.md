@@ -6,7 +6,7 @@ You will need your Public API Key from you HelpCrunch Account -> Settings -> Dev
 This client library will cover most of requests descript here: https://docs.helpcrunch.com/backend-api-reference.html 
 
 ### Prerequisites
-PHP 7, php-json
+PHP 7, Composer, php-json (default extension)
 
 ### Installation
 Run `composer require helpcrunch/api-client-php`
